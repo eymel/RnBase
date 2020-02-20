@@ -15,6 +15,11 @@ Assuming you have all the requirements installed, you can setup and run the proj
 
 ### Customization
 
+#### Rename App
+
+- `yarn global add react-native-rename` to install the dependecies.
+- `npx react-native-rename "RnBase App"` to rename the app.
+
 #### Set icon
 
 - `react-native set-icon --path path-to-image`
