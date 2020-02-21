@@ -1,44 +1,44 @@
 import React, {useState} from 'react';
-import {View, Text, Button, TouchableOpacity, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Container, Content, Button, Text, View} from 'native-base';
 
 export function CounterScreen({navigation}) {
   const [counter, setCounter] = useState(0);
 
   return (
-    <View style={styles.container}>
-      <Text>Counter Screen</Text>
-      <Text style={styles.counter_text}>{counter}</Text>
-      <View style={styles.counterButtons}>
-        <TouchableOpacity
-          style={styles.butonContainer}
-          onPress={() => {
-            setCounter(counter - 1);
-          }}>
-          <View style={[styles.button, styles.button_red]}>
+    <Container>
+      <Content contentContainerStyle={styles.container}>
+        <Text>Counter Screen</Text>
+        <Text  style={styles.counter_text}>{counter}</Text>
+        <View style={styles.counterButtons}>
+          <Button
+            danger
+            style={styles.button}
+            onPress={() => {
+              setCounter(counter - 1);
+            }}>
             <Text style={styles.button_text}> - </Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.butonContainer}
-          onPress={() => {
-            setCounter(counter + 1);
-          }}>
-          <View style={[styles.button, styles.button_green]}>
+          </Button>
+          <Button
+            success
+            style={styles.button}
+            onPress={() => {
+              setCounter(counter + 1);
+            }}>
             <Text style={styles.button_text}> + </Text>
-          </View>
-        </TouchableOpacity>
-      </View>
+          </Button>
+        </View>
 
-      <Button
-        title="Go to Details Screen"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
+        <Button onPress={() => navigation.navigate('Details')}>
+          <Text>Go to Details Screen</Text>
+        </Button>
+      </Content>
+    </Container>
   );
 }
 const styles = StyleSheet.create({
   container: {flex: 1, alignItems: 'center', justifyContent: 'center'},
-  counter_text: {fontSize: 50,fontWeight:"bold"},
+  counter_text: {fontSize: 50, fontWeight: 'bold'},
   counterButtons: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -46,20 +46,12 @@ const styles = StyleSheet.create({
     height: 100,
     marginVertical: 10,
   },
-  butonContainer: {
-    flex: 1,
-  },
   button: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: 10,
     height: 100,
-  },
-  button_text: {color: 'white', fontSize: 50},
-  button_red: {
-    backgroundColor: 'red',
-  },
-  button_green: {
-    backgroundColor: 'green',
-  },
+  }
+ 
 });

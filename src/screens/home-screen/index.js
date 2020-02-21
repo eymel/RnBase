@@ -1,18 +1,29 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Container, Content, Text, Button} from 'native-base';
+
 
 export function HomeScreen({navigation}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-      <Button
-        title="Go to Counter Example"
-        onPress={() => navigation.navigate('Counter')}
-      />
-    </View>
+    <Container>
+      <Content  contentContainerStyle={styles.container}>
+        <Button light onPress={() => navigation.navigate('Details')}>
+          <Text>Go to Details</Text>
+        </Button>
+        <Button
+          primary
+          title="Go to Counter Example"
+          onPress={() => navigation.navigate('Counter')}>
+          <Text>Go to Counter Example</Text>
+        </Button>
+      </Content>
+    </Container>
   );
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
