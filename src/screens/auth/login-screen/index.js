@@ -2,25 +2,17 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {Container, Content, Text, Button} from 'native-base';
 
-
-export function HomeScreen({navigation}) {
+export function LoginScreen({navigation}) {
   return (
     <Container>
       <Content contentContainerStyle={styles.container}>
-        <Button light onPress={() => navigation.navigate('Details')}>
-          <Text>Go to Details</Text>
+        <Button light onPress={() => navigation.navigate('Register')}>
+          <Text>Go to Register</Text>
         </Button>
         <Button
           primary
-          title="Go to Counter Example"
-          onPress={() => navigation.navigate('Counter')}>
-          <Text>Go to Counter Example</Text>
-        </Button>
-
-        <Button
-          danger
-          onPress={() => navigation.navigate('Login')}>
-          <Text>Go To Login</Text>
+          onPress={() => navigation.navigate('Home')}>
+          <Text>Go to Home</Text>
         </Button>
       </Content>
     </Container>
