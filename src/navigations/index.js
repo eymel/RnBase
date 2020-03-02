@@ -1,16 +1,19 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-
-import {HomeScreen, DetailsScreen,CounterScreen} from '../screens';
+import {AuthNavigator} from './auth.navigator';
+import {HomeNavigator} from './home.navigator';
 
 const Stack = createStackNavigator();
 
+const isAuthorized = true;
+
 export function RootStack() {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Details" component={DetailsScreen} />
-      <Stack.Screen name="Counter" component={CounterScreen} />
+    <Stack.Navigator
+      initialRouteName={isAuthorized ? 'Home' : 'Auth'}
+      headerMode="none">
+      <Stack.Screen name="Auth" component={AuthNavigator} />
+      <Stack.Screen name="Home" component={HomeNavigator} />
     </Stack.Navigator>
   );
 }
