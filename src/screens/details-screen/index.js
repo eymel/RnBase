@@ -1,20 +1,49 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {Container, Content,Text,Button} from 'native-base';
 
 export function DetailsScreen({navigation}) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Details Screen</Text>
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.push('Details')}
-      />
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-      <Button title="Go back" onPress={() => navigation.goBack()} />
-      <Button
-        title="Go back to first screen in stack"
-        onPress={() => navigation.popToTop()}
-      />
-    </View>
+    <Container>
+      <Content contentContainerStyle={styles.content}>
+        <Text>Details Screen</Text>
+        <Button
+          info
+          style={styles.button}
+          onPress={() => navigation.push('Details')}>
+          <Text>Go to Details... again</Text>
+        </Button>
+        <Button
+          primary
+          style={styles.button}
+          onPress={() => navigation.navigate('Home')}>
+          <Text>Go to Home</Text>
+        </Button>
+        <Button
+          success
+          style={styles.button}
+          onPress={() => navigation.goBack()}>
+          <Text>Go back</Text>
+        </Button>
+        <Button
+          danger
+          style={styles.button}
+          onPress={() => navigation.popToTop()}>
+          <Text>Go back to first screen in stack</Text>
+        </Button>
+      </Content>
+    </Container>
   );
 }
+const styles = StyleSheet.create({
+  content: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginHorizontal:10
+  },
+  button: {
+    width: "100%",
+    marginVertical:5
+  }
+});
