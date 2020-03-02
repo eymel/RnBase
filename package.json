@@ -1,6 +1,6 @@
 {
   "name": "RnBase",
-  "version": "V1.01.1",
+  "version": "V1.01.2",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
