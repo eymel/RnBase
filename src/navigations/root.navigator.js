@@ -1,9 +1,9 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {AuthNavigator} from './auth.navigator';
-import {HomeNavigator} from './home.navigator';
+import React from 'react'
+import { createStackNavigator } from '@react-navigation/stack'
+import { AuthNavigator } from './auth.navigator'
+import { HomeNavigator } from './home.navigator'
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 export function RootNavigator() {
   return (
@@ -11,5 +11,5 @@ export function RootNavigator() {
       <Stack.Screen name="Auth" component={AuthNavigator} />
       <Stack.Screen name="Home" component={HomeNavigator} />
     </Stack.Navigator>
-  );
+  )
 }

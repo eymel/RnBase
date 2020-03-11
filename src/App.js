@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import {NavigationContainer} from '@react-navigation/native';
-import {RootNavigator} from './navigations';
-import {Root} from 'native-base';
+import { NavigationContainer } from '@react-navigation/native'
+import { RootNavigator } from './navigations'
+import { Root } from 'native-base'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <RootNavigator />
       </NavigationContainer>
     </Root>
-  );
+  )
 }
 
-export default App;
+export default App
