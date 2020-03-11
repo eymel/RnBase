@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet} from 'react-native';
 import {Container, Content, Text, Button} from 'native-base';
 
-
 export function HomeScreen({navigation}) {
   return (
     <Container>
@@ -19,7 +18,7 @@ export function HomeScreen({navigation}) {
 
         <Button
           danger
-          onPress={() => navigation.navigate('Login')}>
+          onPress={() => navigation.navigate('Auth', {screen: 'Login'})}>
           <Text>Go To Login</Text>
         </Button>
       </Content>
