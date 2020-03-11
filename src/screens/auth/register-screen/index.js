@@ -1,8 +1,8 @@
-import React from 'react';
-import {StyleSheet} from 'react-native';
-import {Container, Content, Text, Button} from 'native-base';
+import React from 'react'
+import { StyleSheet } from 'react-native'
+import { Container, Content, Text, Button } from 'native-base'
 
-export function RegisterScreen({navigation}) {
+export function RegisterScreen({ navigation }) {
   return (
     <Container>
       <Content contentContainerStyle={styles.container}>
@@ -11,12 +11,12 @@ export function RegisterScreen({navigation}) {
         </Button>
       </Content>
     </Container>
-  );
+  )
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})
