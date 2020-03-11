@@ -5,6 +5,7 @@ import { Text, Button } from 'native-base'
 
 import { HomeScreen, DetailsScreen, CounterScreen } from '../screens'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Menu } from '../components/icons'
 
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -18,8 +19,8 @@ export function HomeMainNavigator() {
         options={({ navigation }) => ({
           headerLeft: () => {
             return (
-              <TouchableOpacity onPress={() => navigation.openDrawer()}>
-                <Text name="toogle">Open</Text>
+              <TouchableOpacity style={{paddingHorizontal:10}} onPress={() => navigation.openDrawer()}>
+                <Menu stroke="black" width={24} height={24}/>
               </TouchableOpacity>
             )
           }
