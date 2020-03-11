@@ -20,9 +20,25 @@ Assuming you have all the requirements installed, you can setup and run the proj
 - `yarn global add react-native-rename` to install the dependecies.
 - `npx react-native-rename "RnBase App"` to rename the app.
 
-#### Set icon
+#### Set App icon
 
 - `react-native set-icon --path path-to-image`
+
+#### Use Svg Component
+
+- Copy your svg files in `./src/assets/svgs/`.
+- run `yarn icon-components-reload` command.
+- Add below code in whatever want to use icon
+
+```javascript
+import {IconName} from './src/components/icons'
+
+<View>
+<IconName stroke="black" width={24} height={24} />
+</View>
+
+```
+
 
 ### License
 
