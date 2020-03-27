@@ -19,8 +19,11 @@ export function HomeMainNavigator() {
         options={({ navigation }) => ({
           headerLeft: () => {
             return (
-              <TouchableOpacity style={{paddingHorizontal:10}} onPress={() => navigation.openDrawer()}>
-                <Menu stroke="black" width={24} height={24}/>
+              <TouchableOpacity
+                style={{ paddingHorizontal: 10 }}
+                onPress={() => navigation.openDrawer()}
+              >
+                <Menu stroke="black" width={24} height={24} />
               </TouchableOpacity>
             )
           }
